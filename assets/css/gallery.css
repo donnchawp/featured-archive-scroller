@@ -1,0 +1,312 @@
+/**
+ * Featured Archive Scroller - Gallery Styles
+ *
+ * @package FeaturedArchiveScroller
+ */
+
+/* Gallery Wrapper */
+.fas-gallery-wrapper {
+	max-width: 100%;
+	margin: 0 auto;
+	padding: 2rem 1rem;
+}
+
+/* Header */
+.fas-gallery-header {
+	text-align: center;
+	margin-bottom: 2rem;
+}
+
+.fas-gallery-title {
+	font-size: 2.5rem;
+	margin-bottom: 1rem;
+	color: #333;
+}
+
+.fas-gallery-description {
+	font-size: 1.1rem;
+	color: #666;
+	margin-bottom: 1rem;
+	max-width: 800px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.fas-gallery-meta {
+	font-size: 0.9rem;
+	color: #999;
+}
+
+/* Gallery Container */
+.fas-gallery-container {
+	position: relative;
+	width: 100%;
+	margin: 0 auto;
+}
+
+/* Gallery Scroll */
+.fas-gallery-scroll {
+	display: flex;
+	overflow-x: auto;
+	overflow-y: hidden;
+	scroll-behavior: auto; /* Let JavaScript handle smooth scrolling for better control */
+	scroll-snap-type: x mandatory;
+	-webkit-overflow-scrolling: touch;
+	gap: 1rem;
+	padding: 1rem 0;
+	scrollbar-width: thin;
+	scrollbar-color: #ccc #f5f5f5;
+}
+
+.fas-gallery-scroll::-webkit-scrollbar {
+	height: 8px;
+}
+
+.fas-gallery-scroll::-webkit-scrollbar-track {
+	background: #f5f5f5;
+	border-radius: 4px;
+}
+
+.fas-gallery-scroll::-webkit-scrollbar-thumb {
+	background: #ccc;
+	border-radius: 4px;
+}
+
+.fas-gallery-scroll::-webkit-scrollbar-thumb:hover {
+	background: #999;
+}
+
+/* Gallery Item */
+.fas-gallery-item {
+	flex: 0 0 auto;
+	scroll-snap-align: center;
+	position: relative;
+	height: 80vh;
+	max-height: 800px;
+	min-height: 400px;
+}
+
+.fas-gallery-link {
+	display: block;
+	position: relative;
+	height: 100%;
+	text-decoration: none;
+	overflow: hidden;
+	border-radius: 8px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.fas-gallery-link:hover {
+	transform: translateY(-4px);
+	box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+.fas-gallery-link:focus {
+	outline: 3px solid #4A90E2;
+	outline-offset: 2px;
+}
+
+/* Gallery Image */
+.fas-gallery-image {
+	width: auto;
+	height: 100%;
+	display: block;
+	object-fit: cover;
+}
+
+/* Placeholder */
+.fas-gallery-placeholder {
+	width: 600px;
+	height: 100%;
+	background: #f5f5f5;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+/* Overlay */
+.fas-gallery-overlay {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
+	padding: 2rem;
+	color: white;
+	opacity: 0;
+	transition: opacity 0.3s ease;
+	pointer-events: none;
+}
+
+.fas-gallery-link:hover .fas-gallery-overlay,
+.fas-gallery-link:focus .fas-gallery-overlay {
+	opacity: 1;
+}
+
+.fas-gallery-item-title {
+	font-size: 1.5rem;
+	margin: 0 0 0.5rem 0;
+	color: white;
+}
+
+.fas-gallery-item-excerpt {
+	font-size: 1rem;
+	line-height: 1.5;
+	color: rgba(255, 255, 255, 0.9);
+	display: -webkit-box;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+}
+
+/* Navigation Arrows */
+.fas-nav-arrow {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	background: rgba(255, 255, 255, 0.9);
+	border: none;
+	border-radius: 50%;
+	width: 50px;
+	height: 50px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	z-index: 10;
+	transition: background 0.3s ease, opacity 0.3s ease;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.fas-nav-arrow:hover {
+	background: white;
+}
+
+.fas-nav-arrow:focus {
+	outline: 3px solid #4A90E2;
+	outline-offset: 2px;
+}
+
+.fas-nav-arrow:disabled {
+	opacity: 0.3;
+	cursor: not-allowed;
+}
+
+.fas-nav-prev {
+	left: 1rem;
+}
+
+.fas-nav-next {
+	right: 1rem;
+}
+
+.fas-nav-arrow svg {
+	color: #333;
+}
+
+/* Pagination */
+.fas-gallery-pagination {
+	margin-top: 3rem;
+	text-align: center;
+}
+
+.fas-gallery-pagination .page-numbers {
+	display: inline-block;
+	padding: 0.5rem 1rem;
+	margin: 0 0.25rem;
+	background: #f5f5f5;
+	color: #333;
+	text-decoration: none;
+	border-radius: 4px;
+	transition: background 0.3s ease;
+}
+
+.fas-gallery-pagination .page-numbers:hover {
+	background: #e0e0e0;
+}
+
+.fas-gallery-pagination .page-numbers.current {
+	background: #4A90E2;
+	color: white;
+}
+
+.fas-gallery-pagination .page-numbers.dots {
+	background: transparent;
+}
+
+/* Empty State */
+.fas-gallery-empty {
+	text-align: center;
+	padding: 4rem 2rem;
+	color: #666;
+}
+
+.fas-gallery-empty p {
+	font-size: 1.1rem;
+	margin-bottom: 1rem;
+}
+
+.fas-back-link {
+	display: inline-block;
+	padding: 0.75rem 1.5rem;
+	background: #4A90E2;
+	color: white;
+	text-decoration: none;
+	border-radius: 4px;
+	transition: background 0.3s ease;
+}
+
+.fas-back-link:hover {
+	background: #357ABD;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+	.fas-gallery-title {
+		font-size: 2rem;
+	}
+
+	.fas-gallery-item {
+		height: 60vh;
+		min-height: 300px;
+	}
+
+	/* Hide navigation arrows on mobile - use touch swipe instead */
+	.fas-nav-arrow {
+		display: none;
+	}
+
+	.fas-gallery-overlay {
+		padding: 1rem;
+	}
+
+	.fas-gallery-item-title {
+		font-size: 1.25rem;
+	}
+
+	.fas-gallery-item-excerpt {
+		font-size: 0.9rem;
+		-webkit-line-clamp: 2;
+	}
+
+	.fas-gallery-placeholder {
+		width: 300px;
+	}
+}
+
+/* Print Styles */
+@media print {
+	.fas-nav-arrow {
+		display: none;
+	}
+
+	.fas-gallery-scroll {
+		overflow: visible;
+		flex-wrap: wrap;
+	}
+
+	.fas-gallery-item {
+		page-break-inside: avoid;
+	}
+}

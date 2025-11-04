@@ -180,7 +180,11 @@
 }
 
 .fas-nav-arrow:hover {
-	background: white;
+	background: rgba(0, 0, 0, 0.8);
+}
+
+.fas-nav-arrow:hover svg path {
+	stroke: #fff !important;
 }
 
 .fas-nav-arrow:focus {
@@ -202,7 +206,25 @@
 }
 
 .fas-nav-arrow svg {
+	display: block;
+	width: 24px !important;
+	min-width: 24px !important;
+	max-width: 24px !important;
+	height: 24px !important;
+	min-height: 24px !important;
+	max-height: 24px !important;
 	color: #333;
+	fill: none;
+	stroke: #333 !important;
+	stroke-width: 2 !important;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+	flex-shrink: 0;
+}
+
+.fas-nav-arrow svg path {
+	stroke: #333 !important;
+	fill: none !important;
 }
 
 /* Pagination */

@@ -49,7 +49,7 @@ $gallery_query = $render->get_gallery_posts();
 		<div class="fas-gallery-container">
 			<button class="fas-nav-arrow fas-nav-prev" aria-label="<?php esc_attr_e( 'Previous image', 'featured-archive-scroller' ); ?>">
 				<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-					<path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+					<path d="M15 18L9 12L15 6" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 				</svg>
 			</button>
 
@@ -97,7 +97,7 @@ $gallery_query = $render->get_gallery_posts();
 
 			<button class="fas-nav-arrow fas-nav-next" aria-label="<?php esc_attr_e( 'Next image', 'featured-archive-scroller' ); ?>">
 				<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-					<path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+					<path d="M9 18L15 12L9 6" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 				</svg>
 			</button>
 		</div>
